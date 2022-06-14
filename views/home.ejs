@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home | Housie</title>
+</head>
+<body>
+    <div class="container   ">
+        <div id="joining" style="text-align: center;">
+            <h1 class="title">Housie- Fun ways for number calling!</h1>
+            
+                <div>
+                    <span class="inpspan">username: </span>  <input id="username" placeholder="Username" type="text" name="username" >
+                </div>
+                <br>
+                <br>
+                <div id="roomidDetail">
+                    <span class="inpspan">roomId:</span><input id="roomId" placeholder="Room Id" type="text" name="roomId">
+                    <!-- <button id="btnEditRI" onclick="editRoomId()" style="display: none;margin: 0 auto;"><img style="width: 10px;height: 10px;" src="/img/edit.png"></button> -->
+                </div>
+                <br>
+                <br>
+                <button id="btnJoin" onclick="joinRoom()">Join</button>
+                <button id="btnEditRI" style="display: none;" onclick="editRoomId()">Change RoomId</button>
+                <br>
+                <!-- <button id="getlist" onclick="editRoomId()">Get list</button> -->
+                
+        </div>
+        <div id="waiting" style="display: none;">
+            <h1 >Wait for others to join the room!</h1>
+            <div id="roomDetail"></div>
+            <button id="startGame" class="decor" onclick="startGame()" >Start Game</button>
+            <button id="btnLeaveWaiting" class="decor" style="background-color: red;"  onclick="leave()">Exit lobby</button>
+            <button id="btnMute" onclick="muteVolume(this)">mute</button>
+            <!-- <button value="2" onclick="numberCheck(this)">check</button> -->
+            
+        </div>
+        <div id="chat">
+            <div id="chatHistory">
+
+            </div>
+            <input id="message" placeholder="type a message" type="text">
+            <button id="btnSend" onclick="sendMessage()">Send</button>
+        </div>
+        <div id="userList" style="display: none;"></div>
+        
+        <div id="gaming" style="display: none;">
+            <div class="headContainerGaming" style="color: aliceblue; ">
+                <div ><button id="btnMute" onclick="muteVolume(this)">mute</button> Housie</div>
+                <button id="btnRestart" style="display: none;margin: 0 auto;height: 30px; background-color: green;" onclick="restart()">Play again</button>
+                <button id="btnLeave"   style="margin: 0 auto;;height: 30px; background-color: red;" onclick="leave()">Exit lobby</button>
+            </div>
+            <input id="info" onclick="showInfo()" type="button" value="i" >
+            <input id="closeInfo" onclick="hideInfo()" type="button" value="x" >
+            <br>
+<!--            <div class="topContainer">-->
+            <div id="userListGaming">
+
+            </div>
+            <div id="scoreBoard" >
+
+            </div>
+            <!--            </div> -->
+            <div id="board">
+
+                <div class="title"><span>Board</span></div><br>
+                <div id="gamescroll">
+                    <div id="balls"></div>
+                </div>
+                <br>
+                
+            </div>
+            <div id="newNumber">
+                
+                <div id="picked"></div>
+            </div>
+
+            <div id="ticket"></div>
+        </div>
+        
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/home.js"></script>
+</body>
+</html>
